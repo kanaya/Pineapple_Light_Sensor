@@ -4219,10 +4219,8 @@ distributor Buerklin, 17G482</description>
 <part name="R6" library="resistor" deviceset="R-US_" device="0204/5" value="4.7k"/>
 <part name="MIDIOUT" library="pinhead" deviceset="PINHD-1X5" device=""/>
 <part name="SUPPLY1" library="supply2" deviceset="GND" device=""/>
-<part name="SUPPLY2" library="supply2" deviceset="GND" device=""/>
 <part name="PWR" library="pinhead" deviceset="PINHD-1X2" device=""/>
-<part name="SUPPLY4" library="supply2" deviceset="GND" device=""/>
-<part name="JP1" library="pinhead" deviceset="PINHD-1X4" device=""/>
+<part name="SENS" library="pinhead" deviceset="PINHD-1X4" device=""/>
 <part name="SUPPLY5" library="supply2" deviceset="GND" device=""/>
 <part name="S1" library="switch-dil" deviceset="A1353HEX" device=""/>
 <part name="SUPPLY3" library="supply2" deviceset="GND" device=""/>
@@ -4234,6 +4232,11 @@ distributor Buerklin, 17G482</description>
 A1: Red
 A2: Brown
 GND: Black</text>
+<text x="0" y="25.4" size="1.778" layer="91">Vcc: White
+GND: Black</text>
+<text x="152.4" y="27.94" size="1.778" layer="91">2: Blue
+4: Yellow
+5: Blue</text>
 </plain>
 <instances>
 <instance part="ARDUINO" gate="G$1" x="66.04" y="40.64" rot="R180"/>
@@ -4246,10 +4249,8 @@ GND: Black</text>
 <instance part="R6" gate="G$1" x="35.56" y="48.26"/>
 <instance part="MIDIOUT" gate="A" x="147.32" y="33.02"/>
 <instance part="SUPPLY1" gate="GND" x="137.16" y="20.32"/>
-<instance part="SUPPLY2" gate="GND" x="45.72" y="20.32"/>
-<instance part="PWR" gate="G$1" x="12.7" y="27.94"/>
-<instance part="SUPPLY4" gate="GND" x="5.08" y="20.32"/>
-<instance part="JP1" gate="A" x="7.62" y="68.58" rot="R180"/>
+<instance part="PWR" gate="G$1" x="7.62" y="38.1" rot="R180"/>
+<instance part="SENS" gate="A" x="7.62" y="68.58" rot="R180"/>
 <instance part="SUPPLY5" gate="GND" x="17.78" y="20.32"/>
 <instance part="S1" gate="1" x="86.36" y="40.64" rot="R90"/>
 <instance part="SUPPLY3" gate="GND" x="96.52" y="20.32"/>
@@ -4295,11 +4296,9 @@ GND: Black</text>
 <junction x="43.18" y="48.26"/>
 <wire x1="43.18" y1="48.26" x2="43.18" y2="35.56" width="0.1524" layer="91"/>
 <wire x1="43.18" y1="35.56" x2="53.34" y2="35.56" width="0.1524" layer="91"/>
-<wire x1="43.18" y1="35.56" x2="5.08" y2="35.56" width="0.1524" layer="91"/>
-<wire x1="5.08" y1="35.56" x2="5.08" y2="30.48" width="0.1524" layer="91"/>
-<pinref part="PWR" gate="G$1" pin="1"/>
-<wire x1="5.08" y1="30.48" x2="10.16" y2="30.48" width="0.1524" layer="91"/>
+<wire x1="43.18" y1="35.56" x2="10.16" y2="35.56" width="0.1524" layer="91"/>
 <junction x="43.18" y="35.56"/>
+<pinref part="PWR" gate="G$1" pin="1"/>
 </segment>
 </net>
 <net name="N$4" class="0">
@@ -4326,22 +4325,18 @@ GND: Black</text>
 <wire x1="137.16" y1="33.02" x2="137.16" y2="22.86" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="ARDUINO" gate="G$1" pin="GND@2"/>
-<pinref part="SUPPLY2" gate="GND" pin="GND"/>
-<wire x1="53.34" y1="30.48" x2="45.72" y2="30.48" width="0.1524" layer="91"/>
-<wire x1="45.72" y1="30.48" x2="45.72" y2="22.86" width="0.1524" layer="91"/>
-</segment>
-<segment>
-<pinref part="PWR" gate="G$1" pin="2"/>
-<pinref part="SUPPLY4" gate="GND" pin="GND"/>
-<wire x1="10.16" y1="27.94" x2="5.08" y2="27.94" width="0.1524" layer="91"/>
-<wire x1="5.08" y1="27.94" x2="5.08" y2="22.86" width="0.1524" layer="91"/>
-</segment>
-<segment>
-<pinref part="JP1" gate="A" pin="4"/>
+<pinref part="SENS" gate="A" pin="4"/>
 <wire x1="10.16" y1="71.12" x2="17.78" y2="71.12" width="0.1524" layer="91"/>
-<wire x1="17.78" y1="71.12" x2="17.78" y2="22.86" width="0.1524" layer="91"/>
+<wire x1="17.78" y1="71.12" x2="17.78" y2="38.1" width="0.1524" layer="91"/>
 <pinref part="SUPPLY5" gate="GND" pin="GND"/>
+<pinref part="PWR" gate="G$1" pin="2"/>
+<wire x1="17.78" y1="38.1" x2="17.78" y2="30.48" width="0.1524" layer="91"/>
+<wire x1="17.78" y1="30.48" x2="17.78" y2="22.86" width="0.1524" layer="91"/>
+<wire x1="10.16" y1="38.1" x2="17.78" y2="38.1" width="0.1524" layer="91"/>
+<junction x="17.78" y="38.1"/>
+<pinref part="ARDUINO" gate="G$1" pin="GND@2"/>
+<wire x1="53.34" y1="30.48" x2="17.78" y2="30.48" width="0.1524" layer="91"/>
+<junction x="17.78" y="30.48"/>
 </segment>
 <segment>
 <pinref part="S1" gate="1" pin="C"/>
@@ -4373,7 +4368,7 @@ GND: Black</text>
 <junction x="27.94" y="63.5"/>
 <wire x1="25.4" y1="68.58" x2="25.4" y2="63.5" width="0.1524" layer="91"/>
 <wire x1="25.4" y1="63.5" x2="27.94" y2="63.5" width="0.1524" layer="91"/>
-<pinref part="JP1" gate="A" pin="3"/>
+<pinref part="SENS" gate="A" pin="3"/>
 <wire x1="25.4" y1="68.58" x2="10.16" y2="68.58" width="0.1524" layer="91"/>
 </segment>
 </net>
@@ -4389,7 +4384,7 @@ GND: Black</text>
 <pinref part="ARDUINO" gate="G$1" pin="A1"/>
 <wire x1="45.72" y1="43.18" x2="53.34" y2="43.18" width="0.1524" layer="91"/>
 <junction x="27.94" y="55.88"/>
-<pinref part="JP1" gate="A" pin="2"/>
+<pinref part="SENS" gate="A" pin="2"/>
 <wire x1="22.86" y1="66.04" x2="10.16" y2="66.04" width="0.1524" layer="91"/>
 </segment>
 </net>
@@ -4403,7 +4398,7 @@ GND: Black</text>
 <wire x1="27.94" y1="45.72" x2="53.34" y2="45.72" width="0.1524" layer="91"/>
 <pinref part="ARDUINO" gate="G$1" pin="A0"/>
 <junction x="27.94" y="48.26"/>
-<pinref part="JP1" gate="A" pin="1"/>
+<pinref part="SENS" gate="A" pin="1"/>
 <wire x1="20.32" y1="63.5" x2="10.16" y2="63.5" width="0.1524" layer="91"/>
 </segment>
 </net>
